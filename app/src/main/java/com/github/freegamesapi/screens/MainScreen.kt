@@ -83,6 +83,15 @@ fun GamesItem(item: Games, navController: NavController){
         }
         Row {
           Text(
+            text = "Release date: ",
+            fontWeight = FontWeight.Bold
+          )
+          Text(
+            text = item.release_date
+          )
+        }
+        Row {
+          Text(
             text = "Developer: ",
             fontWeight = FontWeight.Bold
           )

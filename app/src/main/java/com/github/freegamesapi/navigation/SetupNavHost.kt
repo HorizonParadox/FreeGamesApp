@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.github.freegamesapi.MainViewModel
+import com.github.freegamesapi.screens.DetailsScreen
 import com.github.freegamesapi.screens.MainScreen
 import com.github.freegamesapi.screens.SplashScreen
 import com.github.freegamesapi.utils.Constants
@@ -30,7 +31,8 @@ fun SetupNavHost(navController: NavHostController, viewModel: MainViewModel){
       MainScreen(navController = navController, viewModel=viewModel)
     }
 
-    composable(route = Screens.Details.route){
+    composable(route = Screens.Details.route + "/{Id}"){ backStackEntry ->
+      DetailsScreen(navController = navController, viewModel = viewModel, itemId = backStackEntry.arguments?.getString("Id")?: "1")
 
     }
 
